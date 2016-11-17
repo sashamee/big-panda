@@ -1,0 +1,25 @@
+<div class="row bg-white">
+
+   <div class="left margin-bottom-20">
+        <div ng-repeat="comment in commentToShow track by comment.text"
+             class="left col-md-12 margin-5"> <!--  track by comment.date -->
+
+            <div class="left col-md-1">
+                <img ng-src="{{comment.gravatar}}" alt="" class="img-radius" />
+            </div>
+
+            <div class="left col-md-11">
+
+                <span class="left col-md-12 margin-bottom-3"><b>{{comment.email}}</b></span>
+
+                <div class="left col-md-12 text-grey">
+                    {{comment.text}}
+                </div>
+
+            </div>
+
+        </div>
+
+   </div>
+
+</div>

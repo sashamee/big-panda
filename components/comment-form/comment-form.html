@@ -1,0 +1,14 @@
+<div class="row no-gutter bg-grey">
+    <form name="commentForm" ng-model="commentFormModel" class="margin-20">
+        <div class="form-group">
+            <input type="email" class="form-control" placeholder="Email" ng-model="email" name="email" autofocus/>
+        </div>
+        <div class="form-group">
+            <textarea class="form-control" rows="3" placeholder="Message" ng-model="text" name="text"></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary right margin-bottom-20" ng-click="addComment()"
+            ng-disabled="email.length === 0 || text.length === 0">SUBMIT</button>
+
+    </form>
+</div>
