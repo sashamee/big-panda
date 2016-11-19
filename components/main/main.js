@@ -10,11 +10,10 @@
         return {
             restrict: 'E',
             templateUrl: 'components/main/main.html',
-            scope: {},
-            controller: ['$scope', 'usersManagerFactory', Controller]
+            controller: ['usersManagerFactory', Controller]
         };
 
-        function Controller($scope, usersManagerFactory) {
+        function Controller(usersManagerFactory) {
 
             // init data
             usersManagerFactory.setUsersData('noam@bigpanda.io', new Date(), 'Gooodbye :)');

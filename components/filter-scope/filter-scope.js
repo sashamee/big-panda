@@ -18,7 +18,7 @@
 
         function Controller($scope, usersManagerFactory) {
 
-            var minTextLengthToFilter = 1,
+            var filterTextInLowerCase,
                 filterMatch;
 
             $scope.filterTbx = '';
@@ -27,10 +27,12 @@
 
             $scope.showFiltered = function () {
 
+                filterTextInLowerCase = $scope.filterTbx.toLowerCase();
+
                 filterMatch = usersManagerFactory.usersData.filter(function (user) {
 
-                    return (user.email.toLowerCase()).includes($scope.filterTbx.toLowerCase()) ||
-                        (user.text.toLowerCase()).includes($scope.filterTbx.toLowerCase())
+                    return (user.email.toLowerCase()).includes(filterTextInLowerCase) ||
+                        (user.text.toLowerCase()).includes(filterTextInLowerCase)
                 });
 
                 $scope.commentToShow = filterMatch || usersManagerFactory.usersData;
